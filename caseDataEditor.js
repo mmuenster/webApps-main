@@ -102,25 +102,3 @@ function toTitleCase(str)
 {
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
-
-/*
-  i := ie.document.getElementById("ctl00_DefaultContent_ResultPanel_ctl00_ResultControlPanel").firstChild.rows.length
-  headerText := ""
-  Loop, %i%
-  {
-    ; j is the letter of the specimen, k is the site, and l is the gross description
-    j := ie.document.getElementById("ctl00_DefaultContent_ResultPanel_ctl00_ResultControlPanel").firstChild.rows[A_Index-1].cells[0].firstChild.firstChild.rows[0].childNodes[0].childNodes[0].innerHTML
-    j := Substr(j,1,1)
-      k := ie.document.getElementById("ctl00_DefaultContent_ResultPanel_ctl00_ResultControlPanel").firstChild.rows[A_Index-1].cells[0].firstChild.firstChild.rows[0].childNodes[1].childNodes[0].value
-      l := ie.document.getElementById("ctl00_DefaultContent_ResultPanel_ctl00_ResultControlPanel").firstChild.rows[A_Index-1].cells[0].firstChild.firstChild.rows[0].childNodes[2].childNodes[0].childNodes[0].innerHTML
-  procedureString := LISReturnProcedureFromGross(l)
-  StringUpper, k, k, T   ;convert to Title case
-  if procedureString=
-    headerText = %headerText%%j%) %k%:`n***`n`n
-  else
-    headerText = %headerText%%j%) %k%, %procedureString%:`n***`n`n
-  }
-  
-  
-  Return headerText
-  */
